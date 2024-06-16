@@ -8,9 +8,11 @@ pipeline {
                 url: 'https://github.com/Hkudumu/Sprinboot.git'
             }
         }
-         stage('MVN Clean') { 
+         stage('Build') { 
             steps {
-               mvn install
+               withMaven {
+                  sh "mvn install"
+                }    
             }
         }
        
