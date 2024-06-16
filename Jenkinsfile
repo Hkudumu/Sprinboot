@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     tools {
-        Jenkins Maven 'Maven_3.9.7' 
+        Maven 'Maven_3.9.7' 
     }
     stages {
         stage('Checkout') { 
