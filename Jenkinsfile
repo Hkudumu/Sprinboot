@@ -1,9 +1,11 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Checkout') { 
             steps {
-                echo "Building" 
+                git branch: 'main',
+                credentialsId: '38ffa708-7e33-4cb0-ab94-f53110f6f5ea',
+                url: 'https://github.com/Hkudumu/Sprinboot.git'
             }
         }
        
