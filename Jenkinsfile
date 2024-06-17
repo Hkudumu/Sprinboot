@@ -21,7 +21,7 @@ pipeline {
        stage('Docker Build') {
               agent any
               steps {
-                    sh 'docker build -t springboot .'
+                    bat 'docker build -t springboot .'
                     }
         }
     }
