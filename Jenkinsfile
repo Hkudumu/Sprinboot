@@ -2,6 +2,7 @@ pipeline {
     agent any 
     tools {
         maven 'maven'
+         dockerfile true
     }
     stages {
         stage('Checkout') { 
@@ -17,6 +18,11 @@ pipeline {
                   
             }
         }
-       
+       stage('Docker Build') {
+              agent any
+              steps {
+                    sh 'docker build -t springboot .'
+                    }
+        }
     }
 }
